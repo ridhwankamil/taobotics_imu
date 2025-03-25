@@ -21,8 +21,8 @@ class IMUNode(Node):
         self.gra_normalization = self.get_parameter('gra_normalization').value
         self.frame_id = self.get_parameter('frame_id').value
 
-        self.imu_pub = self.create_publisher(Imu, 'handsfree/imu', 10)
-        self.mag_pub = self.create_publisher(MagneticField, 'handsfree/mag', 10)
+        self.imu_pub = self.create_publisher(Imu, 'imu', 10)
+        self.mag_pub = self.create_publisher(MagneticField, 'mag', 10)
         
         self.timer = self.create_timer(1.0/300, self.read_serial_data)
 
